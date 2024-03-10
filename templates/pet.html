@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{ pet.name }}</h2>
+    <p>{{ pet.description }}</p>
+    <p>Price: €{{ pet.price }}</p>
+    <form method="post" action="{{ url_for('checkout', pet_id=pet.id) }}">
+        {{ form.hidden_tag() }}
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+{% endblock %}

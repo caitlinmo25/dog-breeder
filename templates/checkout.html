@@ -1,0 +1,19 @@
+<!-- checkout.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Checkout for {{ pet.name }}</h2>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.card_number.label }}: {{ form.card_number }}
+        </div>
+        <div>
+            {{ form.expiration_date.label }}: {{ form.expiration_date }}
+        </div>
+        <div>
+            {{ form.cvv.label }}: {{ form.cvv }}
+        </div>
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+{% endblock %}
